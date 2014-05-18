@@ -1,4 +1,9 @@
 # FilePreviews.io (Ruby client)
+[![Build Status](https://travis-ci.org/jonahoffline/filepreviews-ruby.svg)](https://travis-ci.org/jonahoffline/filepreviews-ruby)
+[![Gem Version](https://badge.fury.io/rb/filepreviews.svg)](http://badge.fury.io/rb/filepreviews)
+[![Dependency Status](https://gemnasium.com/jonahoffline/filepreviews-ruby.svg)](https://gemnasium.com/jonahoffline/filepreviews-ruby)
+[![Code Climate](https://codeclimate.com/github/jonahoffline/filepreviews-ruby.png)](https://codeclimate.com/github/jonahoffline/filepreviews-ruby)
+
 This is the ruby client library for the **Demo API** of [FilePreviews.io](http://filepreviews.io) service. A lot more to come very soon.
 
 [Sign up to beta](http://eepurl.com/To0U1)
