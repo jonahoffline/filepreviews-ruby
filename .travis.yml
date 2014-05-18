@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+  - 2.1.1
+  - 2.0.0
+script: bundle exec rake test
+notifications:
+  email: false
+  irc:
+    on_success: change
+    on_failure: always
+    channels:
+    - irc.freenode.org#rubyonadhd

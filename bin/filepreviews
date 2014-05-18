@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# @author Jonah Ruiz <jonah@pixelhipsters.com>
+# Command-line application for Filepreviews.io
+
+Signal.trap('INT') { exit 1 }
+
+$LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib/'
+require 'filepreviews'
+require 'filepreviews/cli'
+
+puts Filepreviews::CLI.new(ARGV).parse

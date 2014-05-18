@@ -1,0 +1,5 @@
+MethodLength:
+  Max: 15
+
+RegexpLiteral:
+  MaxSlashes: 0
