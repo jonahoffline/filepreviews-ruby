@@ -25,7 +25,7 @@ Or install it yourself as:
 
 ## Usage
 
-### Example code
+### Basic Example Code
 ```ruby
 
 require 'filepreviews'
@@ -37,6 +37,20 @@ result.preview_url
 result.metadata_url
 result.metadata
 ```
+
+#### Web Page Screencaptures
+```ruby
+
+require 'filepreviews'
+
+url = 'http://pixelhipsters.com'
+result = Filepreviews.generate(url)
+
+result.preview_url
+result.metadata_url
+result.metadata
+```
+
 
 #### Options
 You can optinally send an options object.
