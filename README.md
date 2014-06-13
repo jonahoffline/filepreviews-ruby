@@ -4,6 +4,7 @@
 [![Dependency Status](https://gemnasium.com/jonahoffline/filepreviews-ruby.svg)](https://gemnasium.com/jonahoffline/filepreviews-ruby)
 [![Code Climate](https://codeclimate.com/github/jonahoffline/filepreviews-ruby.png)](https://codeclimate.com/github/jonahoffline/filepreviews-ruby)
 [![Inline docs](http://inch-pages.github.io/github/jonahoffline/filepreviews-ruby.png)](http://inch-pages.github.io/github/jonahoffline/filepreviews-ruby)
+[![Gitter chat](https://badges.gitter.im/jonahoffline/filepreviews-ruby.png)](https://gitter.im/jonahoffline/filepreviews-ruby)
 
 This is the ruby client library for the **Demo API** of [FilePreviews.io](http://filepreviews.io) service. A lot more to come very soon.
 
@@ -83,6 +84,11 @@ Options:
 
 ## Author
   * [Jonah Ruiz](http://www.pixelhipsters.com)
+
+## Discussion
+If you have any questions, ideas or jokes:
+
+[![Gitter chat](https://badges.gitter.im/jonahoffline/filepreviews-ruby.png)](https://gitter.im/jonahoffline/filepreviews-ruby)
 
 ## Contributing
 
