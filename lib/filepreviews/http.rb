@@ -7,7 +7,7 @@ module Filepreviews
   # @author Jonah Ruiz <jonah@pixelhipsters.com>
   # Contains http helper module
   module HTTP
-    API_URL = 'https://blimp-previews.herokuapp.com/'
+    API_URL = 'https://api.filepreviews.io/v1/'
     USER_AGENT = "Filepreviews-Rubygem/#{Filepreviews::VERSION}"
 
     include Filepreviews::Utils
