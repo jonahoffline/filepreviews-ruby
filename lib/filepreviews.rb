@@ -1,5 +1,6 @@
 # encoding: utf-8
 require 'filepreviews/version'
+require 'filepreviews/config'
 require 'filepreviews/utils'
 require 'filepreviews/http'
 require 'filepreviews/response'
@@ -8,6 +9,8 @@ require 'ostruct'
 # @author Jonah Ruiz <jonah@pixelhipsters.com>
 # Main module for FilePreviews.io library
 module Filepreviews
+  include Filepreviews::Config
+
   # Facade method to call API response
   # @param url [String] image url to convert
   # @param options [Hash<Symbol>] :metada and :image options
@@ -33,7 +36,7 @@ module Filepreviews
   # Default options to be used in API request
   # @return [Hash<symbol>] default options
   def self.default_options
-    { debug: true, metadata: ['all'] }
+    { debug: false, metadata: ['all'] }
   end
 
   # Merges metadata options with supported formats
