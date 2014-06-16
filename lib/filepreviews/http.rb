@@ -14,19 +14,32 @@ module Filepreviews
 
     module_function
 
-    # TODO: Fix logger
     # Returns custom Typhoeus connection configuration
     # @param url [String] API url to be used as base
-    # @param _debug [Boolean] flag to log responses into STDOUT
-    # @return [Typhoeus::Connection] http client for requests to API
-    def default_connection(url = API_URL, _debug = true)
-      # _logger = debug ? :logger : false
-
+    # @param debug [Boolean] flag to log responses into STDOUT
+    # @return [Typhoeus::Connection] configured http client for requests to API
+    def default_connection(url = API_URL, debug = false)
       Faraday.new(url: url) do |conn|
         conn.adapter :typhoeus
-        # conn.response _logger
         conn.headers[:user_agent] = USER_AGENT
+        configure_api_auth_header(conn.headers)
+        configure_logger(conn) if debug
       end
+    end
+
+    # Configures API Authentication header
+    # @param connection_headers [Faraday::Connection] header block
+    # @return [Faraday::Connection] 'X-API-KEY' header
+    def configure_api_auth_header(connection_headers)
+      if (api_key = Filepreviews.api_key)
+        connection_headers['X-API-KEY'] = api_key
+      end
+    end
+
+    # Configures logger
+    # @param connection [Faraday::Connection] connection block
+    def configure_logger(connection)
+      connection.response :logger
     end
 
     # Returns processed metadata, and image attributes params
