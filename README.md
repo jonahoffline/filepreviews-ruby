@@ -107,7 +107,7 @@ Options:
 #### Autoload Full (metadata) Response
 	$ filepreviews -m http://pixelhipsters.com/images/pixelhipster_cat.png
 
-**Note**:* This will return a full metadata response, instead of the API's original one that returns the `metadata_url` and `preview_url` urls.*
+**Note**: This will return a full metadata response, instead of the API's original one that returns the `metadata_url` and `preview_url` urls.
 
 
 ## Author
