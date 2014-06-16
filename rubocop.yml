@@ -1,5 +1,8 @@
 MethodLength:
-  Max: 15
+  Max: 20
 
 RegexpLiteral:
   MaxSlashes: 0
+
+LineLength:
+  Max: 80
