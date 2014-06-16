@@ -1,7 +1,7 @@
 language: ruby
 rvm:
-  - 2.1.1
-  - 2.0.0
+- 2.1.1
+- 2.0.0
 script: bundle exec rake test
 notifications:
   email: false
@@ -10,3 +10,6 @@ notifications:
     on_failure: always
     channels:
     - irc.freenode.org#rubyonadhd
+env:
+  global:
+    secure: ifm8+ChcdXB9BkuzordGulaZbkhhJzZpiqh8JnzgAg+KRPr/riEMQOi+wKAaJMyHobmQjPWbkUoeTaR4vMi/Sdf1sH2rc4NZHHInrfq6fjhNPI8cpykInhTb7hymBCZCQgXHzJKlnULWwJat7JNXrftq/PXQgWRVGiWmFbbNTw8=

@@ -24,6 +24,11 @@ MSG
       opts.banner  = BANNER
       opts.set_program_name 'Filepreviews.io'
 
+      opts.on('-k', '--api_key [key]', String,
+              'use API key from Filepreviews.io') do |key|
+        Filepreviews.api_key = key
+      end
+
       opts.on('-m', '--metadata', 'load metadata response') do
         @metadata = true
       end

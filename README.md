@@ -8,8 +8,6 @@
 
 This is the ruby client library for the **Demo API** of [FilePreviews.io](http://filepreviews.io) service. A lot more to come very soon.
 
-[Sign up to beta](http://eepurl.com/To0U1)
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -25,10 +23,31 @@ Or install it yourself as:
     $ gem install filepreviews
 
 ## Usage
+You can currently use the Filepreviews.io API through this gem without registering your application. However, this may change anytime in the future. 
+
+For additional features and greater customization, register your application for an API key at [Filepreviews.io](http://bit.ly/filepreviews-signup) 
+
+### Configuration
+To configure the gem to use your newly-registered `api_key`, you can use one of the two configuration styles:
+
+Block style:
+```ruby
+require 'filepreviews'
+
+Filepreviews.configure do |config|
+  config.api_key = 'YOUR_API_KEY'
+end
+```
+
+Simpler style: 
+```ruby
+require 'filepreviews'
+
+Filepreviews.api_key = 'YOUR_API_KEY'
+```
 
 ### Basic Example Code
 ```ruby
-
 require 'filepreviews'
 
 url = 'http://pixelhipsters.com/images/pixelhipster_cat.png'
@@ -41,9 +60,6 @@ result.metadata
 
 #### Web Page Screencaptures
 ```ruby
-
-require 'filepreviews'
-
 url = 'http://pixelhipsters.com'
 result = Filepreviews.generate(url)
 
@@ -54,12 +70,9 @@ result.metadata
 
 
 #### Options
-You can optinally send an options object.
+You can optionally send an options object (per request).
 
 ```ruby
-
-require 'filepreviews'
-
 options = {
   size: {
     width: 100,
@@ -78,9 +91,24 @@ result.metadata
 ### Command-Line Application
 Options:
 
-  * -m, --metadata - load metadata response
-  * -v, --version  - display the version
-  * -h, --help     - print help
+  * -k, --api_key [key] - use API key from Filepreviews.io
+  * -m, --metadata      - load metadata response
+  * -v, --version       - display the version
+  * -h, --help          - print help
+
+### Command-Line usage examples
+
+#### Basic use
+	$ filepreviews http://www.pixelhipsters.com
+
+#### With an API Key
+	$ filepreviews --api_key YOUR_API_KEY_HERE http://www.pixelhipsters.com
+
+#### Autoload Full (metadata) Response
+	$ filepreviews -m http://pixelhipsters.com/images/pixelhipster_cat.png
+
+**Note**:* This will return a full metadata response, instead of the API's original one that returns the `metadata_url` and `preview_url` urls.*
+
 
 ## Author
   * [Jonah Ruiz](http://www.pixelhipsters.com)
