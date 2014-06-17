@@ -4,7 +4,7 @@
 [![Dependency Status](http://img.shields.io/gemnasium/jonahoffline/filepreviews-ruby.svg?style=flat)](https://gemnasium.com/jonahoffline/filepreviews-ruby)
 [![Code Climate](http://img.shields.io/codeclimate/github/jonahoffline/filepreviews-ruby.svg?style=flat)](https://codeclimate.com/github/jonahoffline/filepreviews-ruby)
 [![Gitter chat](https://img.shields.io/badge/gitter-filepreviews--ruby-blue.svg?style=flat)](https://gitter.im/jonahoffline/filepreviews-ruby)
-[![Inline docs](http://inch-pages.github.io/github/jonahoffline/filepreviews-ruby.png)](http://inch-pages.github.io/github/jonahoffline/filepreviews-ruby)
+[![Inline docs](http://inch-ci.org/github/jonahoffline/filepreviews-ruby.png)](http://inch-ci.org/github/jonahoffline/filepreviews-ruby)
 
 This is the ruby client library for the **Demo API** of [FilePreviews.io](http://filepreviews.io) service. A lot more to come very soon.
 
