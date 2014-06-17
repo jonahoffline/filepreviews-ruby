@@ -1,10 +1,10 @@
 # FilePreviews.io (Ruby client)
-[![Build Status](https://travis-ci.org/jonahoffline/filepreviews-ruby.svg)](https://travis-ci.org/jonahoffline/filepreviews-ruby)
-[![Gem Version](https://badge.fury.io/rb/filepreviews.svg)](http://badge.fury.io/rb/filepreviews)
-[![Dependency Status](https://gemnasium.com/jonahoffline/filepreviews-ruby.svg)](https://gemnasium.com/jonahoffline/filepreviews-ruby)
-[![Code Climate](https://codeclimate.com/github/jonahoffline/filepreviews-ruby.png)](https://codeclimate.com/github/jonahoffline/filepreviews-ruby)
+[![Gem Version](http://img.shields.io/gem/v/filepreviews.svg?style=flat)](http://badge.fury.io/rb/filepreviews)
+[![Build Status](http://img.shields.io/travis/jonahoffline/filepreviews-ruby.svg?style=flat)](https://travis-ci.org/jonahoffline/filepreviews-ruby)
+[![Dependency Status](http://img.shields.io/gemnasium/jonahoffline/filepreviews-ruby.svg?style=flat)](https://gemnasium.com/jonahoffline/filepreviews-ruby)
+[![Code Climate](http://img.shields.io/codeclimate/github/jonahoffline/filepreviews-ruby.svg?style=flat)](https://codeclimate.com/github/jonahoffline/filepreviews-ruby)
+[![Gitter chat](https://img.shields.io/badge/gitter-filepreviews--ruby-blue.svg?style=flat)](https://gitter.im/jonahoffline/filepreviews-ruby)
 [![Inline docs](http://inch-pages.github.io/github/jonahoffline/filepreviews-ruby.png)](http://inch-pages.github.io/github/jonahoffline/filepreviews-ruby)
-[![Gitter chat](https://badges.gitter.im/jonahoffline/filepreviews-ruby.png)](https://gitter.im/jonahoffline/filepreviews-ruby)
 
 This is the ruby client library for the **Demo API** of [FilePreviews.io](http://filepreviews.io) service. A lot more to come very soon.
 
@@ -116,7 +116,8 @@ Options:
 ## Discussion
 If you have any questions, ideas or jokes:
 
-[![Gitter chat](https://badges.gitter.im/jonahoffline/filepreviews-ruby.png)](https://gitter.im/jonahoffline/filepreviews-ruby)
+[![Gitter chat](https://img.shields.io/badge/gitter-filepreviews--ruby-blue.svg?style=flat)](https://gitter.im/jonahoffline/filepreviews-ruby)
+
 
 ## Contributing
 
