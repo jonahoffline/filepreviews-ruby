@@ -54,7 +54,7 @@ module Filepreviews
   # Supported (image) formats in metadata
   # @return [Array] image file extensions
   def self.metadata_formats
-    %w(all exif ocr psd)
+    %w(all exif ocr psd checksum multimedia)
   end
 
   # Supported extracted (image) thumbnail formats
