@@ -1,5 +1,16 @@
 # Filepreviews Changelog
 
+## 1.2.0
+
+Released Jun 26, 2014 ([1.2.0](https://github.com/jonahoffline/filepreviews-ruby/tree/v1.2.0)).
+
+* Update http request from `GET` to `POST`
+* Add `:format` option
+* Add new `:metadata` options: `checksum` and `multimedia`
+* Update `:size` to `:sizes` parameter (in request)
+* Update README to fix small typo (in example) and add new options
+* Update version to 1.2.0
+
 ## 1.1.0
 
 Released Jun 16, 2014 ([1.1.0](https://github.com/jonahoffline/filepreviews-ruby/tree/v1.1.0)).
