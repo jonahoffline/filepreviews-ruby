@@ -45,6 +45,9 @@ module Filepreviews
     metadata = (options.fetch(:metadata) & metadata_formats)
     options.store(:metadata, metadata)
 
+    image = (options.fetch(:format) if image_formats.include?(options[:format]))
+    options.store(:format, image)
+
     default_options.merge(options)
   end
 
@@ -52,5 +55,11 @@ module Filepreviews
   # @return [Array] image file extensions
   def self.metadata_formats
     %w(all exif ocr psd)
+  end
+
+  # Supported extracted (image) thumbnail formats
+  # @return [Array] thumbnail image file extensions
+  def self.image_formats
+    %w(jpg jpeg png)
   end
 end
