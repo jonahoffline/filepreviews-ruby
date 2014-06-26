@@ -32,7 +32,7 @@ module Filepreviews
     def process_params(params)
       {
         url: CGI.unescape(params.url),
-        metadata: extract_metadata(params.metadata)
+        metadata: [extract_metadata(params.metadata)]
       }
     end
   end

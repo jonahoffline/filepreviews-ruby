@@ -14,7 +14,7 @@ describe Filepreviews::Utils do
       params = OpenStruct.new(url: url, metadata: ['png'])
 
       expect(kawaii.process_params(params))
-        .to eq(url: url, metadata: 'png')
+        .to eq(url: url, metadata: ['png'])
     end
   end
 

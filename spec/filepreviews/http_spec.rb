@@ -23,7 +23,10 @@ describe Filepreviews::HTTP do
 
   describe 'configure_api_auth_header' do
     before(:each) { Filepreviews.api_key = nil }
-    header = { 'User-Agent' => "Filepreviews-Rubygem/#{Filepreviews::VERSION}" }
+    header = {
+      'User-Agent'  => "Filepreviews-Rubygem/#{Filepreviews::VERSION}",
+      'Content-Type' => 'application/json'
+    }
 
     context 'when api_key is set' do
       it 'configures the X-API-KEY header' do

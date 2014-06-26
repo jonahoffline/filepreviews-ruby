@@ -73,16 +73,22 @@ result.metadata
 You can optionally send an options object (per request).
 
 ```ruby
-options = {
-  size: {
-    width: 100,
-    height: 999
-  },
-  # supported: 'exif', 'ocr', 'psd' or 'all' which means everything
-  metadata: ['exif', 'ocr', 'psd']
+conf = {
+  options: {
+    size: {
+      width: 100,
+      height: 999
+    },
+    # supported: 'exif', 'ocr', 'psd', 'checksum', 'multimedia',
+    # and 'all' which means everything
+    metadata: ['exif', 'ocr', 'psd'],
+
+    # supported: 'jpg', 'jpeg', 'png'
+    format: 'jpg'
+  }
 }
 
-result = FilePreviews.generate(url, options)
+result = FilePreviews.generate(url, conf)
 result.preview_url
 result.metadata_url
 result.metadata

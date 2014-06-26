@@ -22,6 +22,7 @@ module Filepreviews
       Faraday.new(url: url) do |conn|
         conn.adapter :typhoeus
         conn.headers[:user_agent] = USER_AGENT
+        conn.headers[:content_type] = 'application/json'
         configure_api_auth_header(conn.headers)
         configure_logger(conn) if debug
       end
@@ -47,15 +48,17 @@ module Filepreviews
     # @return [Hash<Symbol>] processed parameters
     def prepare_request(params)
       request = process_params(params)
-      request.store(:size, extract_size(params.size)) if params.size
+      request.store(:sizes, [extract_size(params.size)]) if params.size
+      request.store(:format, params.format) if params.format
       request
     end
 
     # Returns parsed response from API
     # @return [Filepreviews::Response] json response as callable methods
     def fetch(params)
+      options = prepare_request(params)
       response = default_connection(API_URL, params.debug)
-                   .get nil, prepare_request(params)
+                   .post { |req| req.body = JSON.generate(options) }
       parse(response.body)
     end
 
