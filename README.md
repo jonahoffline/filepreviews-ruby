@@ -23,9 +23,9 @@ Or install it yourself as:
     $ gem install filepreviews
 
 ## Usage
-You can currently use the Filepreviews.io API through this gem without registering your application. However, this may change anytime in the future. 
+You can currently use the Filepreviews.io API through this gem without registering your application. However, this may change anytime in the future.
 
-For additional features and greater customization, register your application for an API key at [Filepreviews.io](http://bit.ly/filepreviews-signup) 
+For additional features and greater customization, register your application for an API key at [Filepreviews.io](http://bit.ly/filepreviews-signup)
 
 ### Configuration
 To configure the gem to use your newly-registered `api_key`, you can use one of the two configuration styles:
@@ -39,7 +39,7 @@ Filepreviews.configure do |config|
 end
 ```
 
-Simpler style: 
+Simpler style:
 ```ruby
 require 'filepreviews'
 
@@ -88,7 +88,7 @@ conf = {
   }
 }
 
-result = FilePreviews.generate(url, conf)
+result = Filepreviews.generate(url, conf)
 result.preview_url
 result.metadata_url
 result.metadata
