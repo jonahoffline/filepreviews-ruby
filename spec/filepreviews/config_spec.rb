@@ -15,10 +15,22 @@ describe Filepreviews::Config do
     end
   end
 
+  describe '.secret_key' do
+    it 'sets secret key' do
+      config.secret_key = '666'
+      expect(config.secret_key).to eq('666')
+    end
+  end
+
   describe '.configure' do
     it 'sets the api_key when used with a block' do
-      config.configure { |conf| conf.api_key = 'kawaii!' }
+      config.configure do |conf|
+        conf.api_key = 'kawaii!'
+        conf.secret_key = 'not-kawaii!'
+      end
+
       expect(config.api_key).to eq('kawaii!')
+      expect(config.secret_key).to eq('not-kawaii!')
     end
   end
 end
