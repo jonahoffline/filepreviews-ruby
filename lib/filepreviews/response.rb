@@ -7,6 +7,18 @@ module Filepreviews
     # @return [Filepreviews::Response] inherited/hack version of OpenStruct
     # @see OpenStruct#initialize
     def initialize(hash = nil)
+      responsify(hash)
+    end
+
+    # Magical method to give OpenStruct-like class deep nesting capability
+    def to_h
+      @hash_table
+    end
+
+    # @param hash [Hash<symbol>] JSON response body
+    # @return [Filepreviews::Response] inherited/hack version of OpenStruct
+    # @see OpenStruct#initialize
+    def responsify(hash = nil)
       @table, @hash_table = {}, {}
 
       if hash
@@ -18,19 +30,16 @@ module Filepreviews
       end
     end
 
-    # Magical method to give OpenStruct-like class deep nesting capability
-    def to_h
-      @hash_table
-    end
-
     # Returns metadata response using the metadata_url from first response
     #   flag is used to share this method with the CLI version (puerco, I know)
     # @param js [Boolean] flag to enable json response
     # @return [Filepreviews::Response] api response object
     def metadata(js: false)
-      url = send(:metadata_url)
+      url = send(:url)
       response = Filepreviews::HTTP.default_connection(url).get(nil)
-      js ? JSON.parse(response.body) : Filepreviews::HTTP.parse(response.body)
+      json = JSON.parse(response.body)
+
+      js ? json : self.responsify(json)
     end
   end
 end
