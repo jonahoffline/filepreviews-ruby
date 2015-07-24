@@ -1,4 +1,5 @@
 require 'json'
+require 'base64'
 require 'faraday'
 require 'typhoeus'
 require 'typhoeus/adapters/faraday'
@@ -7,7 +8,7 @@ module Filepreviews
   # @author Jonah Ruiz <jonah@pixelhipsters.com>
   # Contains http helper module
   module HTTP
-    API_URL = 'https://api.filepreviews.io/v1/'
+    BASE_URL = 'https://api.filepreviews.io'
     USER_AGENT = "Filepreviews-Rubygem/#{Filepreviews::VERSION}"
 
     include Filepreviews::Utils
@@ -18,7 +19,7 @@ module Filepreviews
     # @param url [String] API url to be used as base
     # @param debug [Boolean] flag to log responses into STDOUT
     # @return [Typhoeus::Connection] configured http client for requests to API
-    def default_connection(url = API_URL, debug = false)
+    def default_connection(url = BASE_URL, debug = false)
       Faraday.new(url: url) do |conn|
         conn.adapter :typhoeus
         conn.headers[:user_agent] = USER_AGENT
@@ -28,12 +29,25 @@ module Filepreviews
       end
     end
 
+    # Returns API Keys status
+    # @return [Boolean] for when API keys are configured
+    def api_keys?
+      !!(Filepreviews.api_key && Filepreviews.secret_key)
+    end
+
+    # Configures API HTTP Basic Authentication
+    # @return [String] HTTP Auth string for header
+    def generate_auth_key
+      key = Base64.encode64("#{Filepreviews.api_key}:#{Filepreviews.secret_key}").gsub(/\n/, '')
+      "Basic #{key}"
+    end
+
     # Configures API Authentication header
     # @param connection_headers [Faraday::Connection] header block
-    # @return [Faraday::Connection] 'X-API-KEY' header
+    # @return [Faraday::Connection] 'Authorization' header
     def configure_api_auth_header(connection_headers)
-      if (api_key = Filepreviews.api_key)
-        connection_headers['X-API-KEY'] = api_key
+      if api_keys?
+        connection_headers['Authorization'] = generate_auth_key
       end
     end
 
@@ -55,10 +69,14 @@ module Filepreviews
 
     # Returns parsed response from API
     # @return [Filepreviews::Response] json response as callable methods
-    def fetch(params)
+    def fetch(params, endpoint_path = 'previews')
       options = prepare_request(params)
-      response = default_connection(API_URL, params.debug)
-                   .post { |req| req.body = JSON.generate(options) }
+      response = default_connection(BASE_URL, params.debug)
+                   .post do |req|
+                    req.url("/v2/#{endpoint_path}/")
+                     req.body = JSON.generate(options)
+                   end
+
       parse(response.body)
     end
 
