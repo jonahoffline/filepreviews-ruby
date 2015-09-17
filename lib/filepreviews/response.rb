@@ -30,7 +30,7 @@ module Filepreviews
       end
     end
 
-    # Returns metadata response using the metadata_url from first response
+    # Returns metadata response using the url from first response
     #   flag is used to share this method with the CLI version (puerco, I know)
     # @param js [Boolean] flag to enable json response
     # @return [Filepreviews::Response] api response object
