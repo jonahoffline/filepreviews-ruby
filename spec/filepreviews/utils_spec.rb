@@ -24,4 +24,26 @@ describe Filepreviews::Utils do
       expect(Kawaii.new.extract_size(size)).to eq('320x240')
     end
   end
+
+  describe '.validate_pages' do
+    context 'when called with range parameters (1-3)' do
+      it 'validates page parameters' do
+        expect(Kawaii.new.validate_pages('1-3'))
+          .to eq('1-3')
+      end
+    end
+
+    context 'when called with specific pages' do
+      it 'validates page parameters' do
+        expect(Kawaii.new.validate_pages('1,3,5'))
+          .to eq('1,3,5')
+      end
+    end
+
+    context 'when called with specific pages' do
+      it 'validates page parameters' do
+        expect(Kawaii.new.validate_pages('all')).to eq('all')
+      end
+    end
+  end
 end

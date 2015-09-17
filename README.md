@@ -28,7 +28,7 @@ You can currently use the Filepreviews.io API through this gem without registeri
 For additional features and greater customization, register your application for an API key at [Filepreviews.io](http://bit.ly/filepreviews-signup)
 
 ### Configuration
-To configure the gem to use your newly-registered `api_key`, you can use one of the two configuration styles:
+To configure the gem to use your newly-registered `api + secret keys`, you can use one of the two configuration styles:
 
 Block style:
 ```ruby
@@ -36,6 +36,7 @@ require 'filepreviews'
 
 Filepreviews.configure do |config|
   config.api_key = 'YOUR_API_KEY'
+  config.secret_key = 'YOUR_SECRET_KEY'
 end
 ```
 
@@ -44,6 +45,7 @@ Simpler style:
 require 'filepreviews'
 
 Filepreviews.api_key = 'YOUR_API_KEY'
+Filepreviews.config.secret_key = 'YOUR_SECRET_KEY'
 ```
 
 ### Basic Example Code
@@ -53,9 +55,9 @@ require 'filepreviews'
 url = 'http://pixelhipsters.com/images/pixelhipster_cat.png'
 result = Filepreviews.generate(url)
 
-result.preview_url
-result.metadata_url
-result.metadata
+result.url
+result.status
+result.metadata # fetches metadata
 ```
 
 #### Web Page Screencaptures
@@ -63,8 +65,8 @@ result.metadata
 url = 'http://pixelhipsters.com'
 result = Filepreviews.generate(url)
 
-result.preview_url
-result.metadata_url
+result.url
+result.status
 result.metadata
 ```
 
@@ -80,24 +82,26 @@ conf = {
       height: 999
     },
     # supported: 'exif', 'ocr', 'psd', 'checksum', 'multimedia',
-    # and 'all' which means everything
-    metadata: ['exif', 'ocr', 'psd'],
+    metadata: ['exif'],
 
     # supported: 'jpg', 'jpeg', 'png'
-    format: 'jpg'
+    format: 'jpg',
+
+    # supported: '1', '1-3', '1,3,5', '1-3', 'all'
+    pages: '1-3'
   }
 }
 
 result = Filepreviews.generate(url, conf)
-result.preview_url
-result.metadata_url
+result.url
 result.metadata
 ```
 
 ### Command-Line Application
 Options:
 
-  * -k, --api_key [key] - use API key from Filepreviews.io
+  * -k, --api_key    [key] - use API key from Filepreviews.io
+  * -s, --secret_key [key] - use secret key from Filepreviews.io
   * -m, --metadata      - load metadata response
   * -v, --version       - display the version
   * -h, --help          - print help
@@ -108,12 +112,12 @@ Options:
 	$ filepreviews http://www.pixelhipsters.com
 
 #### With an API Key
-	$ filepreviews --api_key YOUR_API_KEY_HERE http://www.pixelhipsters.com
+	$ filepreviews --api_key YOUR_API_KEY_HERE --secret_key YOUR_SECRET_KEY_HERE http://www.pixelhipsters.com
 
 #### Autoload Full (metadata) Response
 	$ filepreviews -m http://pixelhipsters.com/images/pixelhipster_cat.png
 
-**Note**: This will return a full metadata response, instead of the API's original one that returns the `metadata_url` and `preview_url` urls.
+**Note**: This will return a full metadata response, instead of the API's original response that only returns the `url` and `status` of the request.
 
 
 ## Author

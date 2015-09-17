@@ -13,11 +13,14 @@ describe Filepreviews do
   end
 
   it 'includes configurable methods from Filepreviews::Config' do
-    expect(file_previews.methods).to include(:api_key, :configure)
+    expect(file_previews.methods).to include(:api_key, :secret_key, :configure)
   end
 
   describe '.generate' do
-    before(:each) { Filepreviews.api_key = nil }
+    before(:each) do
+      Filepreviews.api_key = nil
+      Filepreviews.secret_key = nil
+    end
 
     context 'when used without an api key' do
       it 'returns a Filepreviews::Response instance' do
@@ -29,10 +32,11 @@ describe Filepreviews do
     context 'when used with an api key' do
       it 'returns a Filepreviews::Response instance' do
         Filepreviews.api_key = ENV['FILEPREVIEWS_API_KEY']
+        Filepreviews.secret_key = ENV['FILEPREVIEWS_SECRET_KEY']
         response = file_previews.generate(sample_img)
 
-        expect(response.metadata_url).to_not be_nil
-        expect(response.preview_url).to_not be_nil
+        expect(response.url).to_not be_nil
+        expect(response.id).to_not be_nil
         expect(response).to be_an_instance_of(Filepreviews::Response)
       end
     end
@@ -40,11 +44,30 @@ describe Filepreviews do
     context 'when used with an incorrect api key' do
       it 'returns a Filepreviews::Response instance with an error msg' do
         Filepreviews.api_key = '666'
+        Filepreviews.secret_key = '777'
         response = file_previews.generate(sample_img)
 
         expect(response).to respond_to(:error)
-        expect(response.error).to respond_to(:api_key)
-        expect(response.error.api_key).to include('Invalid API Key.')
+        expect(response.error).to respond_to(:message)
+        expect(response.error).to respond_to(:type)
+
+        expect(response.error.message).to eq('Invalid API Key provided.')
+        expect(response.error.type).to eq('invalid_request_error')
+      end
+    end
+
+    context 'when used with incomplete keys' do
+      it 'returns a Filepreviews::Response instance with an error msg' do
+        Filepreviews.api_key = '666'
+        # Filepreviews.secret_key = nil
+        response = file_previews.generate(sample_img)
+
+        expect(response).to respond_to(:error)
+        expect(response.error).to respond_to(:message)
+        expect(response.error).to respond_to(:type)
+
+        expect(response.error.message).to eq('Authentication credentials were not provided.')
+        expect(response.error.type).to eq('invalid_request_error')
       end
     end
   end

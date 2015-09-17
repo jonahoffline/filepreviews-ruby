@@ -10,6 +10,7 @@ require 'ostruct'
 # Main module for FilePreviews.io library
 module Filepreviews
   include Filepreviews::Config
+  include Filepreviews::Utils
 
   # Facade method to call API response
   # @param url [String] image url to convert
@@ -36,17 +37,20 @@ module Filepreviews
   # Default options to be used in API request
   # @return [Hash<symbol>] default options
   def self.default_options
-    { debug: false, metadata: ['all'] }
+    { debug: false, pages: '1' }
   end
 
   # Merges metadata options with supported formats
   # @param options [Hash<symbol>] metadata and optional size
   def self.merge_options(options)
-    metadata = (options.fetch(:metadata) & metadata_formats)
-    options.store(:metadata, metadata)
+    metadata = (options.fetch(:metadata, ['exif']) & metadata_formats)
+    options.store(:metadata, metadata) unless metadata.empty?
 
     image = (options.fetch(:format) if image_formats.include?(options[:format]))
     options.store(:format, image)
+
+    pages = (options.fetch(:pages, '1'))
+    options.store(:pages, validate_pages(pages))
 
     default_options.merge(options)
   end
@@ -54,7 +58,7 @@ module Filepreviews
   # Supported (image) formats in metadata
   # @return [Array] image file extensions
   def self.metadata_formats
-    %w(all exif ocr psd checksum multimedia)
+    %w(exif ocr psd checksum multimedia)
   end
 
   # Supported extracted (image) thumbnail formats

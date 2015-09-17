@@ -13,7 +13,20 @@ module Filepreviews
     # @param metadata [Array] image formats
     # @return [String] metadata url parameters
     def extract_metadata(metadata)
-      metadata.join(',')
+      if metadata.class.eql?(Array)
+        metadata.join(',')
+      else
+        metadata
+      end
+    end
+
+    # Validates page parameters
+    # @param pages [Array] page parameters
+    # @return [String] page thumbnail parameters
+    def validate_pages(pages)
+      if !!(pages =~ /,/) || !!(pages =~ /-/) || pages.eql?('all') || pages =~ /\d/
+        pages
+      end
     end
 
     # Extracts the desired image size attributes

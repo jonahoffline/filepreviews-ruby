@@ -22,22 +22,28 @@ describe Filepreviews::HTTP do
   end
 
   describe 'configure_api_auth_header' do
-    before(:each) { Filepreviews.api_key = nil }
+    before(:each) do
+      Filepreviews.api_key = nil
+      Filepreviews.secret_key = nil
+    end
+
     header = {
       'User-Agent'  => "Filepreviews-Rubygem/#{Filepreviews::VERSION}",
       'Content-Type' => 'application/json'
     }
 
     context 'when api_key is set' do
-      it 'configures the X-API-KEY header' do
+      it 'configures the Authorization header' do
         Filepreviews.api_key = '666'
-        expect(http.default_connection.headers['X-API-KEY']).to eq('666')
+        Filepreviews.secret_key = '000'
+        expect(http.default_connection.headers['Authorization'])
+          .to eq(Filepreviews::HTTP.generate_auth_key)
       end
     end
 
     context 'when api_key is not present' do
-      it 'does not add the X-API-KEY header' do
-        expect(http.default_connection.headers['X-API-KEY']).to be_nil
+      it 'does not add the Authorization header' do
+        expect(http.default_connection.headers['Authorization']).to be_nil
         expect(http.default_connection.headers).to eq(header)
       end
     end
