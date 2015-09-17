@@ -25,8 +25,13 @@ MSG
       opts.set_program_name 'Filepreviews.io'
 
       opts.on('-k', '--api_key [key]', String,
-              'use API key from Filepreviews.io') do |key|
-        Filepreviews.api_key = key
+              'use API key from Filepreviews.io') do |api_key|
+        Filepreviews.api_key = api_key
+      end
+
+      opts.on('-s', '--secret_key [key]', String,
+              'use Secret key from Filepreviews.io') do |secret_key|
+        Filepreviews.secret_key = secret_key
       end
 
       opts.on('-m', '--metadata', 'load metadata response') do
