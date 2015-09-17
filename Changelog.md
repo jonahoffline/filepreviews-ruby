@@ -1,5 +1,18 @@
 # Filepreviews Changelog
 
+## 2.0.0
+
+Released Sept 17, 2015 ([2.0.0](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.0)).
+
+* Change API base url
+* Add `generate_auth_key` for generating Authorization header
+* Remove `:metadata` options: `all`
+* Add `:pages` validator
+* Add default `:pages` (`1`) and `:metadata` (`exif`)
+* Update README to include new `secret_key` options for `lib` and `cli`
+* Update encrypted `api key` and add `secret key` for Travis-CI.
+* Update version to 2.0.0
+
 ## 1.2.0
 
 Released Jun 26, 2014 ([1.2.0](https://github.com/jonahoffline/filepreviews-ruby/tree/v1.2.0)).
