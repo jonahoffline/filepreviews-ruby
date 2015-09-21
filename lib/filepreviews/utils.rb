@@ -13,11 +13,7 @@ module Filepreviews
     # @param metadata [Array] image formats
     # @return [String] metadata url parameters
     def extract_metadata(metadata)
-      if metadata.class.eql?(Array)
-        metadata.join(',')
-      else
-        metadata
-      end
+      metadata.join(',')
     end
 
     # Validates page parameters
@@ -43,10 +39,13 @@ module Filepreviews
     # @param params [Hash<Symbol>] :url and :metadata
     # @return [Hash<Symbol>] processed parameters for http request
     def process_params(params)
-      {
-        url: CGI.unescape(params.url),
-        metadata: [extract_metadata(params.metadata)]
-      }
+      parameters = { url: CGI.unescape(params.url) }
+
+      if params.metadata
+        parameters[:metadata] = [extract_metadata(params.metadata)]
+      end
+
+      parameters
     end
   end
 end

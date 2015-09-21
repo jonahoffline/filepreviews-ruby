@@ -6,6 +6,7 @@ require 'filepreviews/http'
 require 'filepreviews/response'
 require 'ostruct'
 
+
 # @author Jonah Ruiz <jonah@pixelhipsters.com>
 # Main module for FilePreviews.io library
 module Filepreviews
@@ -43,8 +44,11 @@ module Filepreviews
   # Merges metadata options with supported formats
   # @param options [Hash<symbol>] metadata and optional size
   def self.merge_options(options)
-    metadata = (options.fetch(:metadata, ['exif']) & metadata_formats)
-    options.store(:metadata, metadata) unless metadata.empty?
+    options.delete(:metadata) if options[:metadata] && options[:metadata].empty?
+
+    if metadata_formats.include?(options[:metadata])
+      options.store(:metadata, options[:metadata])
+    end
 
     image = (options.fetch(:format) if image_formats.include?(options[:format]))
     options.store(:format, image)
