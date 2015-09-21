@@ -43,8 +43,8 @@ module Filepreviews
   # Merges metadata options with supported formats
   # @param options [Hash<symbol>] metadata and optional size
   def self.merge_options(options)
-    metadata = (options.fetch(:metadata, ['exif']) & metadata_formats)
-    options.store(:metadata, metadata) unless metadata.empty?
+    metadata = (options.fetch(:metadata) if metadata_formats.include?(options[:metadata]))
+    options.store(:metadata, metadata)
 
     image = (options.fetch(:format) if image_formats.include?(options[:format]))
     options.store(:format, image)
