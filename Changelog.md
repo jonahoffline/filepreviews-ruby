@@ -1,5 +1,11 @@
 # Filepreviews Changelog
 
+## 2.0.1
+
+Released Sept 21, 2015 ([2.0.1](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.1)).
+
+* Remove default `exif` `metadata` option
+
 ## 2.0.0
 
 Released Sept 17, 2015 ([2.0.0](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.0)).
