@@ -6,7 +6,7 @@
 [![Gitter chat](https://img.shields.io/badge/gitter-filepreviews--ruby-blue.svg?style=flat)](https://gitter.im/jonahoffline/filepreviews-ruby)
 [![Inline docs](http://inch-ci.org/github/jonahoffline/filepreviews-ruby.png)](http://inch-ci.org/github/jonahoffline/filepreviews-ruby)
 
-This is the ruby client library for the [FilePreviews.io](http://filepreviews.io) API. A lot more to come very soon.
+Ruby client library and CLI tool for the [FilePreviews.io](http://filepreviews.io) service. Generate image previews and metadata from almost any kind of file.
 
 ## Installation
 
@@ -23,9 +23,7 @@ Or install it yourself as:
     $ gem install filepreviews
 
 ## Usage
-You can currently use the Filepreviews.io API through this gem without registering your application. However, this may change anytime in the future.
-
-For additional features and greater customization, register your application for an API key at [Filepreviews.io](http://bit.ly/filepreviews-signup)
+Register your application for an API key at [FilePreviews.io](http://filepreviews.io).
 
 ### Configuration
 To configure the gem to use your newly-registered `api + secret keys`, you can use one of the two configuration styles:
