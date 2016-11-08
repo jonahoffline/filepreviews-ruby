@@ -85,6 +85,17 @@ conf = {
     # supported: 'jpg', 'jpeg', 'png'
     format: 'jpg',
 
+    # Arbitrary key/value pairs that are returned in the "user_data" field in response
+    data: {
+      uuid: 'database_identifier'
+    },
+
+    # Support for specifying custom headers when the preview is placed in storage container
+    uploader: {
+      destination: 'directory/name',
+      headers: {} # common request headers to S3 bucket for instance
+    },
+
     # supported: '1', '1-3', '1,3,5', '1-3', 'all'
     pages: '1-3'
   }
