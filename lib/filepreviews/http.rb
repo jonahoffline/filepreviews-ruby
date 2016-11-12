@@ -64,6 +64,8 @@ module Filepreviews
       request = process_params(params)
       request.store(:sizes, [extract_size(params.size)]) if params.size
       request.store(:format, params.format) if params.format
+      request.store(:data, params.data) if params.data
+      request.store(:uploader, params.uploader) if params.uploader
       request
     end
 

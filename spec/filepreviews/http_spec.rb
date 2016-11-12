@@ -48,4 +48,43 @@ describe Filepreviews::HTTP do
       end
     end
   end
+
+  describe '.prepare_request' do
+    let(:params) { OpenStruct.new(options) }
+    let(:request) { http.prepare_request(params) }
+
+    context 'when custom :data is provided' do
+      let(:options) do
+        {
+          url: 'testing.com',
+          uploader: { header: 'storage' },
+          data: { custom: :value }
+        }
+      end
+
+      it 'includes the :data hash without changes' do
+        expect(request).to include(data: { custom: :value })
+      end
+
+      it 'includes the :uploader hash without changes' do
+        expect(request).to include(uploader: { header: 'storage' })
+      end
+    end
+
+    context 'when no custom :data is provided' do
+      let(:options) do
+        {
+          url: 'testing.com'
+        }
+      end
+
+      it 'does not include the :data key' do
+        expect(request).not_to have_key(:data)
+      end
+
+      it 'does not include the :uploader key' do
+        expect(request).not_to have_key(:uploader)
+      end
+    end
+  end
 end
