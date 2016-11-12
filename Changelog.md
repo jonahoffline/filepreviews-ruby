@@ -1,5 +1,11 @@
 # Filepreviews Changelog
 
+## 2.0.2
+
+Released Nov 12, 2016 ([2.0.2](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.2)).
+
+* Add `data` and `uploader` options (thanks to [macfanatic](https://github.com/macfanatic))
+
 ## 2.0.1
 
 Released Sept 21, 2015 ([2.0.1](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.1)).
