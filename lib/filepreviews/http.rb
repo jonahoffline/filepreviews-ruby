@@ -66,7 +66,7 @@ module Filepreviews
       request.store(:format, params.format) if params.format
       request.store(:data, params.data) if params.data
       request.store(:uploader, params.uploader) if params.uploader
-      request.store(:pages, params.pages) if params.pages.present?
+      request.store(:pages, params.pages) if params.pages
       request
     end
 
