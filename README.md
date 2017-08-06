@@ -3,6 +3,7 @@
 [![Build Status](http://img.shields.io/travis/jonahoffline/filepreviews-ruby.svg?style=flat)](https://travis-ci.org/jonahoffline/filepreviews-ruby)
 [![Dependency Status](http://img.shields.io/gemnasium/jonahoffline/filepreviews-ruby.svg?style=flat)](https://gemnasium.com/jonahoffline/filepreviews-ruby)
 [![Code Climate](http://img.shields.io/codeclimate/github/jonahoffline/filepreviews-ruby.svg?style=flat)](https://codeclimate.com/github/jonahoffline/filepreviews-ruby)
+[![security](https://hakiri.io/github/jonahoffline/filepreviews-ruby/master.svg)](https://hakiri.io/github/jonahoffline/filepreviews-ruby/master)
 [![Gitter chat](https://img.shields.io/badge/gitter-filepreviews--ruby-blue.svg?style=flat)](https://gitter.im/jonahoffline/filepreviews-ruby)
 [![Inline docs](http://inch-ci.org/github/jonahoffline/filepreviews-ruby.png)](http://inch-ci.org/github/jonahoffline/filepreviews-ruby)
 
