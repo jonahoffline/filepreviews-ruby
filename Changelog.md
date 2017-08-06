@@ -1,5 +1,13 @@
 # Filepreviews Changelog
 
+## 2.0.3
+
+Released August 5, 2017 ([2.0.3](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.3)).
+
+* Fix missing `pages` option parameter (thanks to [systho](https://github.com/Systho))
+* Add Hakiri (security) badge
+* Update `Typhoeus`, and `Faraday` dependencies
+
 ## 2.0.2
 
 Released Nov 12, 2016 ([2.0.2](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.2)).
