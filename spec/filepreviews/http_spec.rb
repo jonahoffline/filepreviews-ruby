@@ -53,6 +53,19 @@ describe Filepreviews::HTTP do
     let(:params) { OpenStruct.new(options) }
     let(:request) { http.prepare_request(params) }
 
+    context 'when options are provided' do
+      let(:options) do
+        {
+          url: 'testing.com',
+          pages: '1-3'
+        }
+      end
+
+      it 'includes the :pages options without changes' do
+        expect(request).to include(pages: '1-3')
+      end
+    end
+
     context 'when custom :data is provided' do
       let(:options) do
         {
