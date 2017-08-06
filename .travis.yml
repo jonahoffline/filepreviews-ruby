@@ -7,13 +7,6 @@ rvm:
 - 2.1.1
 - 2.0.0
 script: bundle exec rake test
-notifications:
-  email: false
-  irc:
-    on_success: change
-    on_failure: always
-    channels:
-    - irc.freenode.org#rubyonadhd
 env:
   global:
   - secure: ksz/xSq5EkiWQfclYHh5gj32IjqH5uTXacYqFGZdpZWPtkxGscSVeBzAvGtY9IQddkEuobVEW8TBqPo2rZ+7sT6ZfLQOuNM9Vtw5jDbAifyHLivZ5/acnW7m5BcmkxttKrel4DfRexzvGW6SAweE+fC07BLfPjzyKoIyjKnV4Y8=
