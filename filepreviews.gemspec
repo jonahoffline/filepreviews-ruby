@@ -22,6 +22,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
 
-  spec.add_dependency 'faraday', '~> 0.9.0'
-  spec.add_dependency 'typhoeus', '~> 0.6.8'
+  spec.add_dependency 'faraday', '~> 0.12.2'
+  spec.add_dependency 'typhoeus', '~> 1.1.2'
 end
