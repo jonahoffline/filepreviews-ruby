@@ -13,7 +13,7 @@ module Filepreviews
     # @param metadata [Array] image formats
     # @return [String] metadata url parameters
     def extract_metadata(metadata)
-      metadata.join(',')
+      metadata.to_a
     end
 
     # Validates page parameters
