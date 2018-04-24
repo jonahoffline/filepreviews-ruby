@@ -25,6 +25,16 @@ describe Filepreviews::Utils do
     end
   end
 
+  describe '.extract_metadata' do
+    it 'returns one metadata entry as an array' do
+      expect(Kawaii.new.extract_metadata([:psd])).to eq([:psd])
+    end
+
+    it 'returns multipe metadata entries as an array' do
+      expect(Kawaii.new.extract_metadata([:psd, :ocr])).to eq([:psd, :ocr])
+    end
+  end
+
   describe '.validate_pages' do
     context 'when called with range parameters (1-3)' do
       it 'validates page parameters' do
