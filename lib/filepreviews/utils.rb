@@ -42,7 +42,7 @@ module Filepreviews
       parameters = { url: CGI.unescape(params.url) }
 
       if params.metadata
-        parameters[:metadata] = [extract_metadata(params.metadata)]
+        parameters[:metadata] = extract_metadata(params.metadata)
       end
 
       parameters
