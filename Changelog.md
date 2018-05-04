@@ -1,5 +1,11 @@
 # Filepreviews Changelog
 
+## 2.0.4
+
+Released May 4, 2018 ([2.0.4](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.4)).
+
+* Fix `metadata` options (thanks to [itay-grudev](https://github.com/itay-grudev))
+
 ## 2.0.3
 
 Released August 5, 2017 ([2.0.3](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.3)).
