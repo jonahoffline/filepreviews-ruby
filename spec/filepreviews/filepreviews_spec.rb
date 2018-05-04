@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Filepreviews do
   let(:file_previews) { Filepreviews }
-  let(:sample_img) { 'http://pixelhipsters.com/images/pixelhipster_cat.png' }
+  let(:sample_img) { 'https://images.pexels.com/photos/876441/pexels-photo-876441.jpeg' }
 
   it 'keeps it real, you feels me dawg?' do
     expect(true).to eq(true)
@@ -30,14 +30,31 @@ describe Filepreviews do
     end
 
     context 'when used with an api key' do
-      it 'returns a Filepreviews::Response instance' do
+      before(:each) do
         Filepreviews.api_key = ENV['FILEPREVIEWS_API_KEY']
         Filepreviews.secret_key = ENV['FILEPREVIEWS_SECRET_KEY']
+      end
+
+      it 'returns a Filepreviews::Response instance' do
         response = file_previews.generate(sample_img)
 
         expect(response.url).to_not be_nil
         expect(response.id).to_not be_nil
         expect(response).to be_an_instance_of(Filepreviews::Response)
+      end
+
+      context 'with additional metadata' do
+        it 'returns a Filepreviews::Response instance' do
+          response = file_previews.generate(sample_img, {
+            options: {
+              metadata: [ 'ocr', 'psd', 'exif', 'sketch', 'webpage', 'checksum', 'multimedia' ]
+            }
+          })
+
+          expect(response.url).to_not be_nil
+          expect(response.id).to_not be_nil
+          expect(response).to be_an_instance_of(Filepreviews::Response)
+        end
       end
     end
 
