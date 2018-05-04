@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Filepreviews do
   let(:file_previews) { Filepreviews }
-  let(:sample_img) { 'https://images.pexels.com/photos/876441/pexels-photo-876441.jpeg' }
+  let(:sample_img) { 'https://filepreviews.io/img/filepreviews-logo.svg' }
 
   it 'keeps it real, you feels me dawg?' do
     expect(true).to eq(true)
