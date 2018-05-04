@@ -2,9 +2,8 @@
 [![Gem Version](https://badge.fury.io/rb/filepreviews.svg)](https://badge.fury.io/rb/filepreviews)
 [![Build Status](https://travis-ci.org/jonahoffline/filepreviews-ruby.svg?branch=master)](https://travis-ci.org/jonahoffline/filepreviews-ruby)
 [![Dependency Status](https://gemnasium.com/badges/github.com/jonahoffline/filepreviews-ruby.svg)](https://gemnasium.com/github.com/jonahoffline/filepreviews-ruby)
-[![Maintainability](https://api.codeclimate.com/v1/badges/da1cc5ca8fbbbf1ae3a9/maintainability)](https://codeclimate.com/github/jonahoffline/filepreviews-ruby/maintainability)
 [![security](https://hakiri.io/github/jonahoffline/filepreviews-ruby/master.svg)](https://hakiri.io/github/jonahoffline/filepreviews-ruby/master)
-[![Gitter chat](https://img.shields.io/badge/gitter-filepreviews--ruby-blue.svg?style=flat)](https://gitter.im/jonahoffline/filepreviews-ruby)
+[![Maintainability](https://api.codeclimate.com/v1/badges/da1cc5ca8fbbbf1ae3a9/maintainability)](https://codeclimate.com/github/jonahoffline/filepreviews-ruby/maintainability)
 [![Inline docs](http://inch-ci.org/github/jonahoffline/filepreviews-ruby.png)](http://inch-ci.org/github/jonahoffline/filepreviews-ruby)
 
 Ruby client library and CLI tool for the [FilePreviews.io](http://filepreviews.io) service. Generate image previews and metadata from almost any kind of file.
