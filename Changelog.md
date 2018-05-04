@@ -1,5 +1,11 @@
 # Filepreviews Changelog
 
+## 2.0.5
+
+Released May 4, 2018 ([2.0.5](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.5)).
+
+* Update `Typhoeus`, and `Faraday` dependencies
+
 ## 2.0.4
 
 Released May 4, 2018 ([2.0.4](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.4)).
