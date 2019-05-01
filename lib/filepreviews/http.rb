@@ -67,6 +67,7 @@ module Filepreviews
       request.store(:data, params.data) if params.data
       request.store(:uploader, params.uploader) if params.uploader
       request.store(:pages, params.pages) if params.pages
+      request.store(:callback_url, params.callback_url) if params.callback_url
       request
     end
 
