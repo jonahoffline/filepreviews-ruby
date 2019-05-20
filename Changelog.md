@@ -1,5 +1,11 @@
 # Filepreviews Changelog
 
+## 2.0.6
+
+Released May 19, 2019 ([2.0.6](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.6)).
+
+* Add `callback_url` option (thanks to [patrick-gleeson](https://github.com/patrick-gleeson))
+
 ## 2.0.5
 
 Released May 4, 2018 ([2.0.5](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.5)).
