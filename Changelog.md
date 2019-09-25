@@ -1,5 +1,11 @@
 # Filepreviews Changelog
 
+## 2.0.7
+
+Released Sept 24, 2019 ([2.0.7](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.7)).
+
+* Add GitHub Package Registry support
+
 ## 2.0.6
 
 Released May 19, 2019 ([2.0.6](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.6)).
