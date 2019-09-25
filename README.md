@@ -13,6 +13,10 @@ Add this line to your application's Gemfile:
 
     gem 'filepreviews'
 
+Or via GitHub Package Manager:
+
+    gem 'filepreviews', source: 'https://rubygems.pkg.github.com/jonahoffline'
+
 And then execute:
 
     $ bundle
