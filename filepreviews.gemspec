@@ -12,6 +12,8 @@ Gem::Specification.new do |spec|
   spec.summary       = %q(FilePreviews.io Ruby library and CLI for the service)
   spec.homepage      = 'https://github.com/jonahoffline/filepreviews-ruby'
   spec.license       = 'MIT'
+  spec.metadata['homepage_uri'] = spec.homepage
+  spec.metadata['github_repo'] = spec.homepage
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
