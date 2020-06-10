@@ -1,5 +1,9 @@
 # Filepreviews Changelog
 
+## Unreleased
+
+* Ruby 2.7 compatibility
+
 ## 2.0.7
 
 Released Sept 24, 2019 ([2.0.7](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.7)).
