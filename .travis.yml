@@ -2,14 +2,19 @@ language: ruby
 os: linux
 dist: xenial
 rvm:
-- 2.7.1
-- 2.4.1
-- 2.3.3
-- 2.2.6
-- 2.1.1
-- 2.0.0
+  - ruby-head
+  - truffleruby
+  - truffleruby-20.1.0
+  - 2.7.1
+  - 2.6.6
+  - 2.5.8
+  - 2.4.10
 script: bundle exec rake test
 env:
   global:
   - secure: ksz/xSq5EkiWQfclYHh5gj32IjqH5uTXacYqFGZdpZWPtkxGscSVeBzAvGtY9IQddkEuobVEW8TBqPo2rZ+7sT6ZfLQOuNM9Vtw5jDbAifyHLivZ5/acnW7m5BcmkxttKrel4DfRexzvGW6SAweE+fC07BLfPjzyKoIyjKnV4Y8=
   - secure: lYcTOY21MNhFAvd3mCNj0CBoMJYMLGy+PsNcuLvhNcQHw/+ulkzQITJFo9IaAOl8TXv+ETAfay0eXfzVC8hE8DTeq3QovdocciMa+otCpVQWRzDwfc+mfUqutdgn96CjAmkvGYHwkDf/X4LBRaDhI2beKeaGO/BGQZw+NMEBFzo=
+jobs:
+  allow_failures:
+    - rvm: ruby-head
+    - rvm: truffleruby
