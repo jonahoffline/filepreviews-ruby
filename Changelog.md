@@ -1,8 +1,10 @@
 # Filepreviews Changelog
 
-## Unreleased
+## 2.0.8
 
-* Ruby 2.7 compatibility
+* Ruby 2.7 compatibility (thanks to [MartinodF](https://github.com/MartinodF))
+* Update Travis to include additional Ruby versions (2.6.6, 2.5.8, 2.4.10, truffleruby)
+* Update gemspec to require Ruby version >= 2.4
 
 ## 2.0.7
 
