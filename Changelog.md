@@ -1,6 +1,14 @@
 # Filepreviews Changelog
 
+## 2.0.9
+
+Released Sept 6, 2020 ([2.0.9](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.9)).
+
+* Update `Typhoeus` dependency
+
 ## 2.0.8
+
+Released June 24, 2020 ([2.0.8](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.8)).
 
 * Ruby 2.7 compatibility (thanks to [MartinodF](https://github.com/MartinodF))
 * Update Travis to include additional Ruby versions (2.6.6, 2.5.8, 2.4.10, truffleruby)
