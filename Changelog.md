@@ -4,7 +4,7 @@
 
 Released Sept 6, 2020 ([2.0.9](https://github.com/jonahoffline/filepreviews-ruby/tree/v2.0.9)).
 
-* Update `Typhoeus` dependency
+* Update `Faraday` dependency
 
 ## 2.0.8
 
